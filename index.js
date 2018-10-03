@@ -10,6 +10,13 @@ app.use(require('body-parser').json());
 app.post('/stripe', (req, res) => {
     const { token: source, amount, currency, description } = req.body;
 
+    console.log({
+        source,
+        amount,
+        currency,
+        description
+    });
+
     stripe.charges.create({
         amount,
         currency,
