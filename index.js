@@ -3,6 +3,7 @@ const express = require('express');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 const app = express();
 
+app.use(require('cors')());
 app.use(require('morgan')('dev'));
 app.use(require('body-parser').json());
 
